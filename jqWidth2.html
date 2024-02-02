@@ -4,8 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+        <script src="../js/jquery-3.7.1.min.js"></script>
 </head>
 <body>
+	    <script>
+        var direction = false;
+        var modWidth = 70;
+        var count = 5;
+
+        $(document).ready(function() {
+
+            $("div").click(function() {
+                if (!direction) {
+                    modWidth -= 8;
+                    $(this).css("background-color", "blue");
+                } else {
+                    modWidth += 8;
+                    $(this).css("background-color", "coral");
+                }
+
+                $(this).width(modWidth);
+
+                if (--count == 0){
+                    direction = !direction;
+                    count = 5;
+                }
+            });
+        });
+    </script>
 	<style>
         div{
             width: 70px;
