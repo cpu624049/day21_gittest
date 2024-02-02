@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+        <script src="../js/jquery-3.7.1.min.js"></script>
 </head>
 <body>
+	    <script>
+        $(document).ready(function() {
+            $("#button1").click(function() {
+                //container 제거
+                // 선택 요소와 자식 모두 제거
+                $(".container").remove();
+            });
+            $("#button2").click(function() {
+                // 선택 요소의 자식만 모두 제거
+                $(".container").empty();
+            });
+        });
+    </script>
+    <style>
+        p{
+            background-color: yellow;
+        }
+        .container{
+            height: 80px;
+            width: 200px;
+            border: 1px solid red;
+        }
+    </style>
        <button id="button1">remove</button>
     <button id="button2">empty</button>
     <div class="container">
